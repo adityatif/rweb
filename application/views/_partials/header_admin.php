@@ -49,13 +49,15 @@
 				</div>
 				<div class="col-lg-2 pt-2">
 					<div class="d-flex justify-content-end">
-						<h5 class="font-weight-bold border bg-light pl-2 pr-2">Admin</h5>
+						<div class="font-weight-bold border bg-light pl-2 pr-2"> <a href="<?php echo site_url('Lapor/logout')?>">Logout</a> </div>
 					</div>
 				</div>
 
 			</div>
 		</div>
 	</div>
+
+
 	
 </body>
 </html>

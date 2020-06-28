@@ -3,16 +3,55 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Lapor extends CI_Controller {
 
-	public function index()
+	public function __construct()
 	{
+		parent::__construct();
+		$this->load->library('session');
+		 $this->load->library('form_validation');
+	}
 
-		$this->load->view('_partials/header_admin');
-
-		//$this->load->view('home');
-
+	public function index(){
+		$this->load->view('_partials/header_pelapor');
+		$this->load->view('home');
 		$this->load->view('_partials/footer');
 	}
 
+	public function login(){
+		$user = $this->input->post('username');
+		$pass = $this->input->post('password');
+
+		if($user == 'admin' && $pass == 'admin')
+		{
+			$this->session->set_userdata('username, $user');
+			redirect('Lapor/admin');
+		}else{
+			$this->load->view('login');
+		}
+	}
+
+	public function admin(){
+		$this->load->view('_partials/header_admin');
+		$this->load->view('home');
+		$this->load->view('_partials/footer');
+	}
+
+	public function logout(){
+		$this->session->unset_userdata(array('username'=>''));
+		redirect('Lapor/index');
+	}
+
+	public function aksi(){
+
+         $this->form_validation->set_rules('username','username','required');
+
+         $this->form_validation->set_rules('password','password','required');
+
+            if($this->form_validation->run() != false){
+                   echo "Form validation";
+             }else{
+                     echo "eror";
+                   }
+            }
 
 	public function data_bencana()
 	{
@@ -40,8 +79,6 @@ class Lapor extends CI_Controller {
 		$this->load->view('data_laporan_pengungsi', $data);
 
 		$this->load->view('_partials/footer');
-
-
 	}
 
 

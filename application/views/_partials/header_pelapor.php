@@ -49,7 +49,7 @@
 				</div>
 				<div class="col-lg-2 pt-2">
 					<div class="d-flex justify-content-end">
-						<h5 class="font-weight-bold border bg-light pl-2 pr-2">Pelapor</h5>
+						<div class="font-weight-bold border bg-light pl-2 pr-2"> <a href="<?php echo site_url('lapor/login') ?>">Login</a> </div>
 					</div>
 				</div>
 

@@ -20,7 +20,7 @@
  		
  		<div class="row">
  			<div class="col">
- 				Selamat Datang
+ 				Selamat Datang di Web BPBD DIY
  			</div>
  		</div>
 

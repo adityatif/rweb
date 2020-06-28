@@ -48,7 +48,7 @@
       Email
     </div>
     <div class="col">
-      <input type="text" name="email" required="">
+      <input type="email" name="email" required="">
     </div>
     </div>
 
@@ -66,7 +66,7 @@
       Isi Laporan
     </div>
     <div class="col">
-        <textarea name="laporan" id="" cols="18" rows="4"></textarea>
+        <textarea name="laporan" id="" cols="18" rows="4" required="required"></textarea>
     </div>
     </div>
 
